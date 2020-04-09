@@ -1,0 +1,22 @@
+<br>
+<br>
+<form #registerForm="ngForm" (ngSubmit)="Submit()">
+    <div class="card">
+        <div class="card-header">
+            <h2>Add or remove user from this role</h2>
+        </div>
+        <div class="card-body">
+
+            <div class=" custom-control " *ngFor="let pro of User ; index as i ">
+                <input type="hidden" required [ngModelOptions]="{standalone: true}" [(ngModel)]="pro.UserId">
+                <input type="hidden" required [ngModelOptions]="{standalone: true}" [(ngModel)]="pro.UserName">
+
+                <input type="checkbox" aria-label="Checkbox for following text input" [ngModelOptions]="{standalone: true}" [(ngModel)]="pro.IsSelected">
+                <label [ngModelOptions]="{standalone: true}" [(ngModel)]="pro.IsSelected">
+                  {{pro.userName}}</label>
+            </div>
+            <a class="btn btn-info " (click)="Submit()">Add Users In This Role</a>
+            <a class="btn btn-outline-danger " (click)="cancel() ">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<br>
+<br>
+<div *ngIf="Roles">
+    <div class="card" *ngFor="let pro of Roles ;  index as i">
+        <h5 class="card-header">{{pro.id}}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{pro.name}}</h5>
+            <a class="btn btn-info" [routerLink]="['/adminstration-listof-user/', pro.id]">Edit</a>
+            <a class="btn btn-outline-danger " (click)="deletRole(pro.id) ">Delet Role</a>
+        </div>
+    </div>
+</div>

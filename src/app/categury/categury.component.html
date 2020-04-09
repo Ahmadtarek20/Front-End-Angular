@@ -1,0 +1,10 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="favouritValue">Chosee Categury </label>
+            <select class="form-control" id="exampleFormControlSelect1" (change)="onChange($event)">
+              <option *ngFor="let value of categuryFromHomeP" [value]="value.id">{{value.name}}</option>
+        </select>
+        </div>
+    </form>
+</div>

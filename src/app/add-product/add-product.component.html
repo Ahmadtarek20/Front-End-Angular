@@ -1,0 +1,39 @@
+<br>
+<br>
+<div class="container">
+    <form #addProduct="ngForm">
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.Name" placeholder="Product Name">
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.Price" placeholder="Price">
+        </div>
+        <div class="form-group">
+            <label>HasDiscount</label>
+            <div class="form-control">
+                <label class="radio-inline">True
+                <input type="radio" value="true" name="HasDiscount" [(ngModel)]="model.HasDiscount">
+                </label>
+                <label class="radio-inline">False
+              <input type="radio" value="false" name="HasDiscount" [(ngModel)]="model.HasDiscount">
+            </label>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>DiscountAmount</label>
+            <input type="number" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.DiscountAmount" placeholder="DiscountAmount">
+        </div>
+        <div class="form-group">
+            <app-categury (categuryChenge)="IsSelected($event)"></app-categury>
+        </div>
+        <div class=" form-group ">
+            <label>Photo</label>
+            <input type="file" (change)="OnFileSelected($event)" [ngModelOptions]="{standalone: true}" [(ngModel)]="model.Photo">
+        </div>
+
+        <button type="submit " class="btn btn-primary " (click)="submit() " [disabled]="addProduct.invalid ">Submit</button>
+    </form>
+</div>
