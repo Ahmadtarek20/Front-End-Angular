@@ -5,7 +5,6 @@ import { AuthService } from '../servecies/auth.service';
 import { CartServiceService } from '../servecies/cart-service.service';
 import { Router } from '@angular/router';
 import { Product } from '../Models/Product';
-import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 import { Carts } from '../Models/Carts';
 
 
